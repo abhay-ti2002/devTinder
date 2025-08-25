@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = (props) => {
   const { flag } = props;
-  console.log(props.flag);
+  // console.log(props.flag);
   return (
     !flag && (
       <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10 fixed bottom-0">

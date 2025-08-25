@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "./NavBar";
-import Footer from "./Footer";
+import { Outlet, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addLogo } from "../utils/appSlice/logoSlice";
+import axios from "axios";
+import { BASE_URL } from "../utils/constant";
+import { addUsers } from "../utils/appSlice/userSlice";
 
 const Body = () => {
   const [flag, setFlag] = useState(true);
-  console.log(flag);
+  const navigate = useNavigate();
+  const dispatch = useDispatch(addLogo(flag));
+  const { users} = useSelector((state) => state.user);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setFlag(false);
@@ -13,17 +19,45 @@ const Body = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const fetchUser = async () => {
+    try {
+      const res = await axios.get(BASE_URL + "/profile/view", {
+        withCredentials: true,
+      });
+      dispatch(addUsers(res.data));
+      // dispatch(addStatus(res.status));
+    } catch (error) {
+      // console.log(error);
+      //  when user is unautharized
+      if (error.status == 401) {
+        navigate("/login");
+      }
+      // console.log("kk", error);
+    }
+  };
+
+  useEffect(() => {
+    if (users.length === 0) {
+      // console.log("bye");
+      fetchUser();
+    }
+  }, []);
+
   return (
     <div>
-      <nav>
-        <Navbar flag={flag} />
-      </nav>
-      <main>
-        <Outlet />
-      </main>
-      <footer>
-        <Footer flag={flag} />
-      </footer>
+      {flag ? (
+        <div className="flex justify-center items-center min-h-screen ">
+          <img
+            className="w-16 h-16 animate-pulse"
+            src="../images/flame-gradient-rgb-rball.png"
+            alt="logo"
+          />
+        </div>
+      ) : (
+        <main>
+          <Outlet />
+        </main>
+      )}
     </div>
   );
 };
