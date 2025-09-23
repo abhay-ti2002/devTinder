@@ -26,6 +26,7 @@ export default defineConfig([
       "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
       "no-undef": "error",
       "no-console": "warn",
+      "react-hooks/exhaustive-deps": "off",
     },
   },
 ]);

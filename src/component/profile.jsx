@@ -1,10 +1,18 @@
 import React from "react";
+import EditProfile from "./EditProfile";
+import { useSelector } from "react-redux";
+import Footer from "./Footer";
 
 const Profile = () => {
+  const user = useSelector((state) => state?.user?.users);
+
   return (
-    <div>
-      <h1>Profile</h1>
-    </div>
+    user && (
+      <div>
+        <EditProfile user={user[0]} />
+        <Footer />
+      </div>
+    )
   );
 };
 

@@ -5,13 +5,14 @@ import { addLogo } from "../utils/appSlice/logoSlice";
 import axios from "axios";
 import { BASE_URL } from "../utils/constant";
 import { addUsers } from "../utils/appSlice/userSlice";
+import Navbar from "./NavBar";
 
 const Body = () => {
   const [flag, setFlag] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch(addLogo(flag));
-  const { users} = useSelector((state) => state.user);
-
+  const { users } = useSelector((state) => state.user);
+  // console.log(users.length);
   useEffect(() => {
     const timer = setTimeout(() => {
       setFlag(false);
@@ -20,16 +21,21 @@ const Body = () => {
   }, []);
 
   const fetchUser = async () => {
+    if (users.length > 0) {
+      // console.log("k");
+      return;
+    }
     try {
       const res = await axios.get(BASE_URL + "/profile/view", {
         withCredentials: true,
       });
       dispatch(addUsers(res.data));
       // dispatch(addStatus(res.status));
+      // console.log(document.cookie);
     } catch (error) {
       // console.log(error);
       //  when user is unautharized
-      if (error.status == 401) {
+      if (error.status === 401 || error.status === 400) {
         navigate("/login");
       }
       // console.log("kk", error);
@@ -37,10 +43,8 @@ const Body = () => {
   };
 
   useEffect(() => {
-    if (users.length === 0) {
-      // console.log("bye");
-      fetchUser();
-    }
+    // console.log("bye");
+    fetchUser();
   }, []);
 
   return (
@@ -55,6 +59,7 @@ const Body = () => {
         </div>
       ) : (
         <main>
+          {users.length > 0 && <Navbar />}
           <Outlet />
         </main>
       )}
