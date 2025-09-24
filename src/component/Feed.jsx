@@ -30,6 +30,16 @@ const Feed = () => {
   useEffect(() => {
     fetchFeed();
   }, []);
+
+  if (!users) {
+    return;
+  }
+
+  if (users.length == 0) {
+    return (
+      <h1 className="pt-48 text-center font-bold text-3xl">No User Found 😟</h1>
+    );
+  }
   return (
     users && (
       <div className="flex justify-center items-center min-h-screen">

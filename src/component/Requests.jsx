@@ -10,8 +10,10 @@ const Requests = () => {
   const dispatch = useDispatch();
 
   const reviewRequest = async (status, _id) => {
-    console.log(_id);
+    // console.log(_id);
     try {
+
+      //eslint-disable-next-line 
       const res = await axios.post(
         BASE_URL + "/request/review/" + status + "/" + _id,
         {},
