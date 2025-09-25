@@ -35,7 +35,7 @@ const Feed = () => {
     return;
   }
 
-  if (users.length == 0) {
+  if (users.length <= 0) {
     return (
       <h1 className="pt-48 text-center font-bold text-3xl">No User Found 😟</h1>
     );
