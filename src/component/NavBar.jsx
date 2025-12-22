@@ -81,6 +81,10 @@ const Navbar = () => {
               <li>
                 <button onClick={handleLogOut}>LogOut</button>
               </li>
+
+              <li>
+                <Link to="/premium">Preminum</Link>
+              </li>
             </ul>
           </div>
         </div>
