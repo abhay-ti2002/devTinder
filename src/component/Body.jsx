@@ -7,11 +7,13 @@ import { BASE_URL } from "../utils/constant";
 import { addUsers } from "../utils/appSlice/userSlice";
 import Navbar from "./NavBar";
 
+
 const Body = () => {
   const [flag, setFlag] = useState(true);
-  const navigate = useNavigate();
   const dispatch = useDispatch(addLogo(flag));
   const { users } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
   // console.log(users.length);
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -20,6 +22,14 @@ const Body = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (users.length > 0) {
+      console.log("k");
+      navigate("/feed");
+      return;
+    }
+  }, [users]);
+  
   const fetchUser = async () => {
     if (users.length > 0) {
       // console.log("k");
