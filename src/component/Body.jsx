@@ -14,7 +14,7 @@ const Body = () => {
   const { users } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
-  // console.log(users.length);
+  console.log(users.length);
   useEffect(() => {
     const timer = setTimeout(() => {
       setFlag(false);
@@ -25,16 +25,15 @@ const Body = () => {
   useEffect(() => {
     if (users.length > 0) {
       console.log("k");
-      navigate("/feed");
-      return;
+      navigate("/feed"); 
     }
   }, [users]);
   
   const fetchUser = async () => {
-    if (users.length > 0) {
-      // console.log("k");
-      return;
-    }
+    // if (users.length > 0) {
+    //   // console.log("k");
+    //   return;
+    // }
     try {
       const res = await axios.get(BASE_URL + "/profile/view", {
         withCredentials: true,

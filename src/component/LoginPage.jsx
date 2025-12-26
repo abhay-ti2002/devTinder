@@ -11,7 +11,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // console.log(password);
+  console.log(password);
 
   const handleLogin = async () => {
     try {
