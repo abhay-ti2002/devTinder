@@ -12,7 +12,8 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log(password);
-
+  
+  
   const handleLogin = async () => {
     try {
       const res = await axios.post(
@@ -25,7 +26,7 @@ const LoginPage = () => {
       );
       dispatch(addUsers(res.data));
       // dispatch(addStatus(res.status));
-      // console.log(res.status);
+      console.log(res.status);
       navigate("/feed");
     } catch (error) {
       // navigate("/login");

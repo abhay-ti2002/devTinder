@@ -30,17 +30,14 @@ const Body = () => {
   }, [users]);
   
   const fetchUser = async () => {
-    // if (users.length > 0) {
-    //   // console.log("k");
-    //   return;
-    // }
+ 
     try {
       const res = await axios.get(BASE_URL + "/profile/view", {
         withCredentials: true,
       });
       dispatch(addUsers(res.data));
       // dispatch(addStatus(res.status));
-      // console.log(document.cookie);
+      console.log(document.cookie);
     } catch (error) {
       // console.log(error);
       //  when user is unautharized
@@ -52,7 +49,7 @@ const Body = () => {
   };
 
   useEffect(() => {
-    // console.log("bye");
+    console.log("bye");
     fetchUser();
   }, []);
 

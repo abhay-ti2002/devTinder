@@ -22,6 +22,7 @@ const Navbar = () => {
         }
       );
       dispatch(removeUser());
+       
       navigate("/login");
     } catch (error) {
       //eslint-disable-next-line

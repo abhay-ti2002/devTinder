@@ -9,6 +9,6 @@ export default defineConfig({
   },
   preview: {
     host: true, // allows external hosts
-    allowedHosts: ["devtinder-2-tzca.onrender.com"], // add your Render URL
+    allowedHosts: ["devtinder-2-tzca.onrender.com", "heartmatch.app"], // add your Render URL
   },
 });
