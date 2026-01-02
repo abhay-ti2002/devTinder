@@ -10,7 +10,7 @@ const UserCards = (props) => {
   // console.log(name);
   const handleSendRequests = async (status, userId) => {
     try {
-      const res = await axios.post(
+      const res = await axios.post( //eslint-disable-line
         BASE_URL + "/request/send/" + status + "/" + userId,
         {},
         {
@@ -18,9 +18,9 @@ const UserCards = (props) => {
         }
       );
       dispatch(removeFeed(userId));
-      console.log(res);
+      // console.log(res);
     } catch (error) {
-      console.log(error);
+      console.log(error); //eslint-disable-line
     }
   };
   return (

@@ -14,7 +14,7 @@ const Body = () => {
   const { users } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
-  console.log(users.length);
+  // console.log(users.length);
   useEffect(() => {
     const timer = setTimeout(() => {
       setFlag(false);
@@ -24,7 +24,7 @@ const Body = () => {
 
   useEffect(() => {
     if (users.length > 0) {
-      console.log("k");
+      // console.log("k");
       navigate("/feed"); 
     }
   }, [users]);
@@ -37,7 +37,7 @@ const Body = () => {
       });
       dispatch(addUsers(res.data));
       // dispatch(addStatus(res.status));
-      console.log(document.cookie);
+      // console.log(document.cookie);
     } catch (error) {
       // console.log(error);
       //  when user is unautharized
@@ -49,7 +49,7 @@ const Body = () => {
   };
 
   useEffect(() => {
-    console.log("bye");
+    // console.log("bye");
     fetchUser();
   }, []);
 

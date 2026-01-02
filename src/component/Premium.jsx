@@ -13,7 +13,7 @@ const Premium = () => {
         { withCredentials: true }
       );
 
-      console.log(order);
+      // console.log(order);
       //razorpay dialog page
 
       const { amount, orderId, notes, currency } = order.data.savePayment;
@@ -36,10 +36,10 @@ const Premium = () => {
         },
       };
 
-      const rzp = new Razorpay(options); //
+      const rzp = new Razorpay(options); //eslint-disable-line
       rzp.open();
     } catch (error) {
-      console.log("payment", error);
+      console.log("payment", error); //eslint-disable-line 
     }
   };
   return (

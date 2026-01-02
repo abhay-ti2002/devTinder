@@ -12,7 +12,6 @@ const EditProfile = ({ user }) => {
   const [about, setAbout] = useState(user.about);
   const [age, setAge] = useState(user.age);
   const [gender, setGender] = useState(user.gender);
-  //eslint-disable-next-line
   const [photourl, setPhoto] = useState(user?.photourl);
   const [toast, setTosted] = useState(false);
   const dispatch = useDispatch();
@@ -38,8 +37,8 @@ const EditProfile = ({ user }) => {
         setTosted(false);
       }, 2000);
     } catch (error) {
-      //eslint-disable-next-line
-      console.log(error);
+      
+      console.log(error); //eslint-disable-line
     }
   };
 

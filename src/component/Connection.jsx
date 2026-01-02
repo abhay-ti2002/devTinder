@@ -14,10 +14,10 @@ const Connections = () => {
         withCredentials: true,
       });
 
-      console.log(res.data.data);
+      // console.log(res.data.data);
       dispatch(addConneciton(res?.data?.data));
     } catch (error) {
-      console.log("Connection", error);
+      console.log("Connection", error); //eslint-disable-line
     }
   };
 

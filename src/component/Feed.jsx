@@ -22,8 +22,8 @@ const Feed = () => {
 
       // console.log(res.data.data);
     } catch (error) {
-      //eslint-disable-next-line
-      console.log(error);
+    
+      console.log(error); //eslint-disable-line
     }
   };
 

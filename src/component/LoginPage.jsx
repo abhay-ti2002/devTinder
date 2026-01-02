@@ -11,7 +11,7 @@ const LoginPage = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(password);
+  // console.log(password);
   
   
   const handleLogin = async () => {
@@ -26,11 +26,11 @@ const LoginPage = () => {
       );
       dispatch(addUsers(res.data));
       // dispatch(addStatus(res.status));
-      console.log(res.status);
+      // console.log(res.status);
       navigate("/feed");
     } catch (error) {
       // navigate("/login");
-      console.log("LoginPage", error);
+      console.log("LoginPage", error); //eslint-disable-line
     }
   };
 

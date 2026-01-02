@@ -29,10 +29,10 @@ const Requests = () => {
       const res = await axios.get(BASE_URL + "/user/requests/recieved", {
         withCredentials: true,
       });
-      console.log(res.data.data);
+      // console.log(res.data.data);
       dispatch(addRequests(res?.data?.data));
     } catch (error) {
-      console.log(error);
+      console.log(error); //eslint-disable-line
     }
   };
 
