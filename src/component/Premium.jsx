@@ -13,7 +13,7 @@ const Premium = () => {
         { withCredentials: true }
       );
 
-      // console.log(order);
+      console.log(order);
       //razorpay dialog page
 
       const { amount, orderId, notes, currency } = order.data.savePayment;
@@ -29,7 +29,7 @@ const Premium = () => {
         prefill: {
           name: notes.userName,
           email: notes.email,
-          contact: "9999999999",
+          contact: "919999999999",
         },
         theme: {
           color: "#F37254",

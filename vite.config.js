@@ -9,6 +9,6 @@ export default defineConfig({
   },
   preview: {
     host: true, // allows external hosts
-    allowedHosts: ["heartmatch.app"], // add your Render URL
+    allowedHosts: ["heartmatch.app", ".heartmatch.app"], // add your Render URL
   },
 });

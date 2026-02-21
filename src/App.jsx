@@ -10,6 +10,8 @@ import Feed from "./component/Feed";
 import Connections from "./component/Connection";
 import Requests from "./component/Requests";
 import Premium from "./component/Premium";
+import SignUp from "./component/SignUp";
+import EmailVerification from "./component/EmailVerification";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
             <Route path="/" element={<Body />}>
               <Route path="/feed" element={<Feed />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/signup" element={<SignUp />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
