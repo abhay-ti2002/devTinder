@@ -23,6 +23,10 @@ function App() {
               <Route path="/feed" element={<Feed />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignUp />} />
+              <Route
+                path="/emailVerification"
+                element={<EmailVerification />}
+              />
               <Route path="/profile" element={<Profile />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
