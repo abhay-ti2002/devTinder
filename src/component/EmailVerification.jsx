@@ -6,12 +6,16 @@ import { useDispatch } from "react-redux";
 import { addUsers } from "../utils/appSlice/userSlice";
 
 const EmailVerification = (props) => {
+  console.log(props); //eslint-disable-line
   const [otp, setOtp] = useState(Array(props?.otpLength).fill(""));
+  console.log(otp); //eslint-disable-line
   const inputsRef = useRef([]);
 
   const [second, setSecond] = useState(60);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+
 
   const handleChange = (e, index) => {
     const value = e.target.value.replace(/\D/, "");

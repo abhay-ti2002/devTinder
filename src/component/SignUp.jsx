@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { appName, BASE_URL } from "../utils/constant";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import { useDispatch } from "react-redux";
 // import { addUsers } from "../utils/appSlice/userSlice";
 import EmailVerification from "./EmailVerification";
@@ -15,7 +15,7 @@ const SignUp = () => {
   const [otpFlag, setOtpFlag] = useState(true);
 
   // const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handlesignUp = async () => {
     try {
@@ -31,7 +31,7 @@ const SignUp = () => {
         { withCredentials: true },
       );
       setOtpFlag(false);
-      navigate("/emailVerification");
+      // navigate("/emailVerification");
     } catch (error) {
       console.log(error); //eslint-disable-line
     }
