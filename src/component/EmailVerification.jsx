@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addUsers } from "../utils/appSlice/userSlice";
 
 const EmailVerification = (props) => {
-  console.log(props); //eslint-disable-line
+  // console.log(props); //eslint-disable-line
   const [otp, setOtp] = useState(Array(props?.otpLength).fill(""));
   console.log(otp); //eslint-disable-line
   const inputsRef = useRef([]);

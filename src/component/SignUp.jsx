@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { appName, BASE_URL } from "../utils/constant";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
-// import { addUsers } from "../utils/appSlice/userSlice";
 import EmailVerification from "./EmailVerification";
 
 const SignUp = () => {
@@ -23,10 +20,10 @@ const SignUp = () => {
       const res = await axios.post(
         BASE_URL + "/singup",
         {
-          name,
-          userName,
-          email,
-          password,
+          name:name,
+          userName:userName,
+          email:email,
+          password:password,
         },
         { withCredentials: true },
       );
