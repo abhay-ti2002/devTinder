@@ -18,7 +18,7 @@ const SignUp = () => {
     try {
       // eslint-disable-next-line
       const res = await axios.post(
-        BASE_URL + "/singup",
+        BASE_URL + "/signup",
         {
           name:name,
           userName:userName,
