@@ -13,7 +13,7 @@ const Premium = () => {
         { withCredentials: true }
       );
 
-      console.log(order);
+      // console.log(order);
       //razorpay dialog page
 
       const { amount, orderId, notes, currency } = order.data.savePayment;
